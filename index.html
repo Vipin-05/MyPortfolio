@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vipin Chaudhari | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init({
+        publicKey: "Dsk9I7yxx-WsGEef7", // Your EmailJS public key
+      });
+    })();
+  </script>
+</head>
+<body>
+  <canvas id="bg-dots"></canvas>
+  <nav>
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-left">
+        <h2 class="greeting">Hi There,</h2>
+        <h1 class="hero-name">
+          I'm <span class="name-main">Vipin</span> <span class="name-accent">Chaudhari</span>
+        </h1>
+        <h3 class="hero-role"><span class="role-accent">Software Developer Engineer..!</span></h3>
+        <a href="#about" class="btn about-btn">About Me <i class="fas fa-arrow-down"></i></a>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/vipin-chaudhari-4a3338233/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Vipin-05" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="profile-pic-wrapper">
+          <img id="profile-img" src="photo.jpg" alt="Vipin Chaudhari">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Vipin Chaudhari.<br>
+      I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering from Vellore Institute of Technology (VIT), Vellore, where I have cultivated a strong academic foundation and a practical skill set as a Software Development Engineer. My technical expertise primarily lies in full-stack web development, with a strong command over the MERN stack (MongoDB, Express.js, React.js, and Node.js) as well as Java, which I frequently use to develop scalable and efficient backend solutions.</p>
+      
+      <p>I hold an AWS Cloud Practitioner Certification, which has provided me with a solid understanding of cloud computing fundamentals, architecture, and services. I am continuously expanding my knowledge in this domain to stay current with industry trends.
+
+Alongside academics, I actively participate in campus clubs focused on finance and cultural activities, which have helped me develop strong teamwork, leadership, and communication skills. I am passionate about using technology to solve real-world problems and always eager to contribute to projects that drive meaningful impact.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills & Tools</h2>
+    <div class="skills-list">
+      <div><b>Languages:</b> Java, C++</div>
+      <div><b>Frontend:</b> HTML, CSS, JavaScript, React.js</div>
+      <div><b>Backend:</b> Express.js, Node.js</div>
+      <div><b>Testing:</b> Postman</div>
+      <div><b>Cloud/DB:</b> AWS, MySQL, MongoDB</div>
+      <div><b>Tools:</b> VS Code, GitHub, Xcode</div>
+      <div><b>Soft Skills:</b> Communication, Collaboration, Leadership, Adaptability, Problem-solving</div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="edu-title">Vellore Institute Of Technology, Vellore (2021-2025)</div>
+      <div class="edu-desc">B. Tech in Computer Science Engineering, 8.18 CGPA</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-title">DDNBC, Bhusawal (2019-2021)</div>
+      <div class="edu-desc">Class XII, 81%</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-title">Tapti Public School, Bhusawal (2019)</div>
+      <div class="edu-desc">Class X, 79%</div>
+    </div>
+    <div class="education-item">
+      <div class="edu-title">Key Courses</div>
+      <div class="edu-desc">DSA, Algorithms, Operating Systems, Object Oriented Programming, Networks, Database Management Systems, Personal Finance</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="work" class="section">
+    <h2>Projects <button class="edit-btn" id="toggleEditMode">✎</button></h2>
+    <div id="project-list" class="project-list">
+      <!-- Projects will be loaded here dynamically -->
+    </div>
+    <!-- Add Project Form (hidden by default) -->
+    <div id="project-form-container" class="modal">
+      <div class="modal-content">
+        <h3>Add/Edit Project</h3>
+        <form id="project-form">
+          <input type="hidden" id="project-id">
+          <input type="text" id="project-title" placeholder="Title" required>
+          <textarea id="project-desc" placeholder="Description" required></textarea>
+          <input type="text" id="project-tech" placeholder="Technologies (e.g., React, Node.js)" required>
+          <input type="url" id="project-github" placeholder="GitHub URL">
+          <input type="url" id="project-demo" placeholder="Live Demo URL">
+          <button type="submit">Save Project</button>
+          <button type="button" onclick="closeProjectForm()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2>Internship Experience</h2>
+    <div class="experience-item">
+      <div class="exp-title">Skilledity (Oct 2024 - Dec 2024)</div>
+      <div class="exp-desc">
+        <p>-During my internship as a Full Stack Developer at <strong>Skilledity</strong>, a startup focused on providing personalized educational programs for schools, I worked in a dynamic team environment to build the platform from scratch.</p>
+
+<p>-I was involved in designing and developing the complete web architecture, including both frontend and backend systems, ensuring scalability and seamless functionality.</p>
+
+<p>-My responsibilities included creating interactive user interfaces, setting up secure APIs, optimizing database performance, and integrating key features to support the platform’s learning modules.</p>
+
+<p>-This experience strengthened my ability to collaborate effectively in a fast-paced startup environment while solving complex technical challenges to deliver a fully functional product.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert-item">
+        <div class="cert-title">AWS Certified Cloud Practitioner</div>
+        <div class="cert-date">January 2024</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-title">AWS Certified Solutions Architect - Associate</div>
+        <div class="cert-date">January 2024</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-title">MERN Stack Development Certification</div>
+        <div class="cert-date">July 2024</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-links">
+      <p>Email: vrchaudhari07@gmail.com</p>
+      <p>Phone: +91 9373188913</p>
+      <div class="all-socials">
+        <a href="https://www.linkedin.com/in/vipin-chaudhari-4a3338233/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://github.com/Vipin-05" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://leetcode.com/u/Vipin_0/" target="_blank"><i class="fab fa-code"></i> LeetCode</a>
+        <a href="https://www.hackerrank.com/profile/vrchaudhari07" target="_blank"><i class="fab fa-hackerrank"></i> HackerRank</a>
+        <a href="https://www.instagram.com/_vipin.315_/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1rtGyIULirSeMiVKWxehr387HTpTusaey?usp=sharing" class="btn" download>Download Resume <i class="fas fa-download"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vipin Chaudhari. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
